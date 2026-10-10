@@ -9,24 +9,22 @@
 <meta property="og:title" content="Rohit Mangla | Product delivery for regulated industries">
 <meta property="og:description" content="Delivery Director in Calgary. Hardware and AI product programs in regulated industries.">
 <meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23171a20'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='%23fff' text-anchor='middle'%3ERM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #051c2c;
-    --navy-soft: #0e2a3f;
+    --black: #000000;
+    --ink: #171a20;
+    --text: #393c41;
+    --muted: #5c5e62;
+    --grey: #f4f4f4;
+    --line: #d0d1d2;
     --white: #ffffff;
-    --wash: #f3f4f5;
-    --ink: #051c2c;
-    --body: #2b3640;
-    --muted: #5d6973;
-    --line: #d3d8dc;
-    --line-dark: rgba(255, 255, 255, 0.18);
-    --blue: #2251ff;
-    --cyan: #00a9f4;
-    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
-    --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --blue: #3e6ae1;
+    --blue-dark: #3457b1;
+    --sans: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
 
   * { box-sizing: border-box; }
@@ -36,177 +34,198 @@
   body {
     margin: 0;
     background: var(--white);
-    color: var(--body);
+    color: var(--text);
     font-family: var(--sans);
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, p { margin: 0; }
-  h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--ink); }
+  h1, h2, h3 { color: var(--ink); font-weight: 500; }
 
-  a { color: var(--blue); text-decoration: none; }
-  a:hover { text-decoration: underline; text-underline-offset: 3px; }
-  a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+  a { color: inherit; }
+  a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
 
-  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
 
-  /* Top bar */
-  .topbar { position: sticky; top: 0; z-index: 10; background: var(--white); border-bottom: 1px solid var(--line); }
-  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 76px; gap: 24px; }
-  .brand { font-family: var(--serif); font-size: 1.5rem; line-height: 1.1; color: var(--ink); letter-spacing: -0.01em; }
-  .brand:hover { text-decoration: none; }
-  .topbar nav { display: flex; gap: 36px; }
-  .topbar nav a { color: var(--ink); font-size: 0.9375rem; font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
-  .topbar nav a:hover { text-decoration: none; border-bottom-color: var(--blue); }
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 256px; height: 44px; padding: 0 24px;
+    border-radius: 4px;
+    font-size: 0.875rem; font-weight: 600; text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .btn.primary { background: var(--blue); color: var(--white); }
+  .btn.primary:hover { background: var(--blue-dark); }
+  .btn.light { background: var(--grey); color: var(--ink); }
+  .btn.light:hover { background: var(--white); }
+  .btn.dark { background: var(--ink); color: var(--white); }
+  .btn.dark:hover { background: #2b2f38; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
 
-  /* Hero */
-  .hero { background: var(--navy); color: var(--white); }
-  .hero .wrap { padding-top: 120px; padding-bottom: 112px; }
+  /* Hero: one full screen */
+  .hero {
+    position: relative;
+    min-height: 100vh; min-height: 100svh;
+    display: flex; flex-direction: column;
+    color: var(--white);
+    background: radial-gradient(120% 75% at 50% 108%, #343944 0%, #101216 52%, #000000 100%);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 40px; }
+  .brand { font-size: 1rem; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; text-decoration: none; color: var(--white); white-space: nowrap; }
+  .nav nav { display: flex; gap: 4px; }
+  .nav nav a {
+    font-size: 0.875rem; font-weight: 500; text-decoration: none; color: var(--white);
+    padding: 6px 16px; border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  .nav nav a:hover { background: rgba(255, 255, 255, 0.14); }
+
+  .hero-top { text-align: center; padding: 9vh 32px 0; }
   .hero h1 {
     color: var(--white);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    line-height: 1.08;
-    letter-spacing: -0.02em;
-    max-width: 17ch;
+    font-size: clamp(2rem, 4.8vw, 3.75rem);
+    line-height: 1.12; letter-spacing: -0.015em;
+    max-width: 21ch; margin: 0 auto;
   }
-  .hero p { margin-top: 36px; max-width: 56ch; font-size: 1.25rem; line-height: 1.6; color: rgba(255, 255, 255, 0.82); }
-  .actions { margin-top: 48px; display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
-  .button {
-    display: inline-block;
-    background: var(--blue); color: var(--white);
-    font-weight: 600; font-size: 1rem;
-    padding: 16px 32px;
-    transition: background-color 0.15s ease, color 0.15s ease;
-  }
-  .button:hover { background: var(--white); color: var(--navy); text-decoration: none; }
-  .on-dark { color: var(--white); font-weight: 500; border-bottom: 1px solid var(--cyan); padding-bottom: 3px; }
-  .on-dark:hover { text-decoration: none; color: var(--cyan); }
+  .hero-top p { margin: 24px auto 0; max-width: 62ch; font-size: 1.0625rem; color: rgba(255, 255, 255, 0.82); }
 
-  /* Proof points */
-  .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px; padding: 88px 0; }
-  .fact { border-top: 1px solid var(--ink); padding-top: 24px; position: relative; }
-  .fact::before { content: ""; position: absolute; top: -3px; left: 0; width: 56px; height: 5px; background: var(--cyan); }
-  .fact strong {
-    display: block;
-    font-family: var(--serif); font-weight: 400;
-    font-size: 3.75rem; line-height: 1; letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-  .fact span { display: block; margin-top: 18px; font-size: 0.9375rem; line-height: 1.55; color: var(--muted); }
+  .hero-bottom { margin-top: auto; padding: 56px 32px 56px; }
+  .specs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; max-width: 1040px; margin: 0 auto 44px; text-align: center; }
+  .specs strong { display: block; font-size: 2.5rem; font-weight: 500; line-height: 1.1; letter-spacing: -0.01em; }
+  .specs span { display: block; margin: 8px auto 0; max-width: 24ch; font-size: 0.8125rem; line-height: 1.5; color: rgba(255, 255, 255, 0.78); }
 
   /* Sections */
-  section { padding: 104px 0; }
-  .tinted { background: var(--wash); }
-  .section-head { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; align-items: start; margin-bottom: 64px; }
-  .section-head h2 { font-size: 2.75rem; line-height: 1.12; letter-spacing: -0.015em; }
-  .section-head p { font-size: 1.25rem; line-height: 1.55; color: var(--body); max-width: 46ch; padding-top: 8px; }
+  section { padding: 112px 0; }
+  .grey { background: var(--grey); }
+  .section-head { text-align: center; margin-bottom: 64px; }
+  .section-head h2 { font-size: clamp(1.75rem, 3.6vw, 2.5rem); line-height: 1.2; letter-spacing: -0.01em; }
+  .section-head p { margin: 16px auto 0; max-width: 60ch; color: var(--muted); }
 
-  /* Strengths */
-  .strengths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
-  .strengths > div { border-top: 1px solid var(--ink); padding-top: 28px; }
-  .strengths h3 { font-size: 1.625rem; line-height: 1.22; letter-spacing: -0.01em; min-height: 2.44em; }
-  .strengths p { margin-top: 18px; }
-  .strengths .proof { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 0.9375rem; color: var(--muted); }
+  /* Strength cards */
+  .cards { display: grid; gap: 24px; }
+  .cards.three { grid-template-columns: repeat(3, 1fr); }
+  .cards.two { grid-template-columns: repeat(2, 1fr); }
+  .card { background: var(--grey); border-radius: 8px; padding: 32px; }
+  .grey .card { background: var(--white); }
+  .card h3 { font-size: 1.25rem; line-height: 1.3; }
+  .card .meta { margin-top: 6px; font-size: 0.8125rem; color: var(--muted); }
+  .card p { margin-top: 14px; font-size: 0.9375rem; }
+  .card .proof { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.8125rem; color: var(--muted); }
 
-  /* Statement band */
-  .band { background: var(--navy); }
-  .band .wrap { padding-top: 112px; padding-bottom: 112px; display: grid; grid-template-columns: 1fr 2fr; gap: 48px; }
-  .band .rule { border-top: 5px solid var(--cyan); width: 56px; margin-top: 18px; }
-  .band blockquote {
-    margin: 0;
-    font-family: var(--serif);
-    font-size: clamp(1.875rem, 4vw, 3rem);
-    line-height: 1.18; letter-spacing: -0.015em;
-    color: var(--white); max-width: 20ch;
-  }
-  .band p { margin-top: 32px; max-width: 54ch; font-size: 1.125rem; color: rgba(255, 255, 255, 0.8); }
+  /* Statement */
+  .statement { background: var(--black); color: var(--white); text-align: center; padding: 144px 0; }
+  .statement blockquote { margin: 0 auto; max-width: 22ch; font-size: clamp(1.75rem, 4.2vw, 3rem); font-weight: 500; line-height: 1.18; letter-spacing: -0.015em; }
+  .statement p { margin: 28px auto 0; max-width: 60ch; color: rgba(255, 255, 255, 0.78); }
 
-  /* Career ledger */
-  .ledger { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
-  .ledger li {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    column-gap: 48px;
-    padding: 40px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .when { font-size: 0.9375rem; font-weight: 600; color: var(--blue); font-variant-numeric: tabular-nums; }
-  .company { font-family: var(--serif); font-size: 1.875rem; line-height: 1.15; letter-spacing: -0.01em; color: var(--ink); margin-top: 8px; }
-  .role { font-size: 1rem; color: var(--body); margin-top: 10px; line-height: 1.5; }
-  .where { font-size: 0.875rem; color: var(--muted); margin-top: 6px; }
-  .did p + p { margin-top: 12px; }
+  /* Career */
+  .roles { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--line); }
+  .roles li { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; padding: 40px 0; border-top: 1px solid var(--line); }
+  .when { font-size: 0.8125rem; font-weight: 500; color: var(--muted); }
+  .company { font-size: 1.75rem; font-weight: 500; line-height: 1.2; color: var(--ink); margin-top: 6px; letter-spacing: -0.01em; }
+  .role { font-size: 0.9375rem; color: var(--text); margin-top: 10px; line-height: 1.5; }
+  .where { font-size: 0.8125rem; color: var(--muted); margin-top: 6px; }
+  .did p + p { margin-top: 10px; }
   .did .names { color: var(--muted); font-size: 0.9375rem; }
-  .env { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.875rem; color: var(--muted); }
-  .env b { font-weight: 600; color: var(--ink); }
+  .did .env { margin-top: 20px; font-size: 0.8125rem; color: var(--muted); }
+  .did .env b { font-weight: 600; color: var(--ink); }
 
-  /* Earlier career */
-  .earlier { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; }
-  .earlier > div { border-top: 1px solid var(--ink); padding-top: 24px; }
-  .earlier h3 { font-size: 1.5rem; line-height: 1.2; }
-  .earlier .meta { font-size: 0.875rem; color: var(--muted); margin-top: 8px; }
-  .earlier p.body { margin-top: 14px; font-size: 1rem; }
-  .interns { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 1rem; max-width: 80ch; }
+  .interns { margin: 40px auto 0; max-width: 76ch; text-align: center; font-size: 0.9375rem; color: var(--muted); }
+
+  /* Country flags */
+  .flag { flex: none; height: 16px; width: 24px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(23, 26, 32, 0.16); }
+  .flag.ca { width: 32px; }
+  .company, .card h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+  .card h3 .flag { height: 14px; width: 21px; }
+
+  .creds .title .flag { display: inline-block; vertical-align: -2px; margin-left: 10px; height: 14px; width: 21px; }
+  .creds .title .flag.de { width: 23px; }
 
   /* Credentials */
   .creds { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; }
-  .creds > div { border-top: 1px solid var(--ink); padding-top: 24px; }
-  .creds h3 { font-family: var(--sans); font-size: 0.9375rem; font-weight: 600; color: var(--blue); margin-bottom: 20px; }
+  .creds h3 { font-size: 0.8125rem; font-weight: 500; color: var(--muted); padding-bottom: 12px; border-bottom: 1px solid var(--ink); }
   .creds ul { list-style: none; margin: 0; padding: 0; }
-  .creds li { padding: 16px 0; border-top: 1px solid var(--line); }
-  .creds li:first-child { border-top: 0; padding-top: 0; }
-  .creds .title { display: block; font-family: var(--serif); font-size: 1.25rem; line-height: 1.3; color: var(--ink); }
-  .creds .sub { display: block; font-size: 0.9375rem; color: var(--muted); line-height: 1.55; margin-top: 4px; }
+  .creds li { padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .creds .title { display: block; font-weight: 500; color: var(--ink); line-height: 1.4; }
+  .creds .sub { display: block; font-size: 0.875rem; color: var(--muted); line-height: 1.5; margin-top: 4px; }
 
   /* Contact */
-  .contact { background: var(--navy); color: var(--white); }
-  .contact .top { padding-top: 112px; padding-bottom: 96px; }
-  .contact h2 { color: var(--white); font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.1; letter-spacing: -0.02em; }
-  .contact p { margin-top: 24px; max-width: 50ch; font-size: 1.1875rem; color: rgba(255, 255, 255, 0.8); }
-  .contact .foot {
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
-    border-top: 1px solid var(--line-dark);
-    padding-top: 28px; padding-bottom: 32px;
-    font-size: 0.8125rem; color: rgba(255, 255, 255, 0.6);
-  }
-  .contact .foot a { color: rgba(255, 255, 255, 0.8); }
+  .contact { background: var(--black); color: var(--white); text-align: center; padding: 136px 0 0; }
+  .contact h2 { color: var(--white); font-size: clamp(2rem, 4.8vw, 3.5rem); line-height: 1.12; letter-spacing: -0.015em; }
+  .contact p { margin: 20px auto 44px; max-width: 52ch; color: rgba(255, 255, 255, 0.8); }
+  .foot { margin-top: 136px; padding: 24px 32px 28px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px; font-size: 0.75rem; font-weight: 500; color: rgba(255, 255, 255, 0.65); }
+  .foot a { text-decoration: none; }
+  .foot a:hover { color: var(--white); }
 
   @media (max-width: 900px) {
-    .facts { grid-template-columns: repeat(2, 1fr); gap: 40px 32px; padding: 64px 0; }
-    .section-head { grid-template-columns: 1fr; gap: 20px; margin-bottom: 48px; }
-    .section-head h2 { font-size: 2.25rem; }
-    .section-head p { padding-top: 0; font-size: 1.125rem; }
-    .strengths { grid-template-columns: 1fr; gap: 40px; }
-    .strengths h3 { min-height: 0; }
-    .band .wrap { grid-template-columns: 1fr; gap: 32px; padding-top: 80px; padding-bottom: 80px; }
-    .band .rule { margin-top: 0; }
-    .ledger li { grid-template-columns: 1fr; row-gap: 20px; padding: 32px 0; }
-    .earlier { grid-template-columns: 1fr; gap: 36px; }
+    .cards.three, .cards.two { grid-template-columns: 1fr; }
+    .roles li { grid-template-columns: 1fr; gap: 20px; padding: 32px 0; }
     .creds { grid-template-columns: 1fr; gap: 40px; }
+    .specs { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; margin-bottom: 36px; }
   }
   @media (max-width: 640px) {
-    body { font-size: 16px; }
     .wrap { padding: 0 20px; }
-    .topbar .wrap { flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding-top: 12px; padding-bottom: 8px; }
-    .brand { font-size: 1.3125rem; }
-    .topbar nav { gap: 22px; }
-    .topbar nav a { font-size: 0.875rem; }
-    .hero .wrap { padding-top: 64px; padding-bottom: 64px; }
-    .hero p { font-size: 1.0625rem; margin-top: 24px; }
-    .actions { margin-top: 36px; gap: 24px; }
-    section { padding: 64px 0; }
-    .fact strong { font-size: 2.75rem; }
-    .section-head h2 { font-size: 1.875rem; }
-    .company { font-size: 1.625rem; }
-    .contact .top { padding-top: 72px; padding-bottom: 64px; }
+    .nav { flex-direction: column; gap: 10px; padding: 18px 12px 0; }
+    .brand { font-size: 0.9375rem; }
+    .nav nav a { padding: 6px 10px; font-size: 0.8125rem; }
+    .hero-top { padding: 6vh 20px 0; }
+    .hero-top p { font-size: 1rem; }
+    .hero-bottom { padding: 40px 20px 32px; }
+    .specs strong { font-size: 2rem; }
+    .btn { width: 100%; min-width: 0; }
+    .buttons { gap: 12px; }
+    section { padding: 72px 0; }
+    .section-head { margin-bottom: 40px; }
+    .statement { padding: 96px 0; }
+    .card { padding: 24px; }
+    .company { font-size: 1.5rem; }
+    .contact { padding-top: 96px; }
+    .foot { margin-top: 96px; }
   }
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="flag-ca" viewBox="0 0 9600 4800">
+    <path fill="#d52b1e" d="M0 0h9600v4800H0z"/>
+    <path fill="#ffffff" fill-rule="evenodd" d="M2400 0h4800v4800h-4800zm2490 4430-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z"/>
+  </symbol>
+  <symbol id="flag-cn" viewBox="0 0 30 20">
+    <path fill="#ee1c25" d="M0 0h30v20H0z"/>
+    <g fill="#ffff00">
+      <path transform="translate(5,5) scale(3)" d="M0,-1 0.587785,0.809017 -0.951057,-0.309017H0.951057L-0.587785,0.809017z"/>
+      <path transform="translate(10,2) rotate(23.036243)" d="M0,-1 0.587785,0.809017 -0.951057,-0.309017H0.951057L-0.587785,0.809017z"/>
+      <path transform="translate(12,4) rotate(45.869898)" d="M0,-1 0.587785,0.809017 -0.951057,-0.309017H0.951057L-0.587785,0.809017z"/>
+      <path transform="translate(12,7) rotate(69.945396)" d="M0,-1 0.587785,0.809017 -0.951057,-0.309017H0.951057L-0.587785,0.809017z"/>
+      <path transform="translate(10,9) rotate(20.659808)" d="M0,-1 0.587785,0.809017 -0.951057,-0.309017H0.951057L-0.587785,0.809017z"/>
+    </g>
+  </symbol>
+  <symbol id="flag-in" viewBox="0 0 225 150">
+    <path fill="#ff9933" d="M0 0h225v50H0z"/>
+    <path fill="#ffffff" d="M0 50h225v50H0z"/>
+    <path fill="#138808" d="M0 100h225v50H0z"/>
+    <g transform="translate(112.5,75)" stroke="#000080" fill="none">
+      <circle r="18.5" stroke-width="3"/>
+      <g stroke-width="1.6">
+        <path d="M0-18.5V18.5"/><path transform="rotate(15)" d="M0-18.5V18.5"/><path transform="rotate(30)" d="M0-18.5V18.5"/><path transform="rotate(45)" d="M0-18.5V18.5"/>
+        <path transform="rotate(60)" d="M0-18.5V18.5"/><path transform="rotate(75)" d="M0-18.5V18.5"/><path transform="rotate(90)" d="M0-18.5V18.5"/><path transform="rotate(105)" d="M0-18.5V18.5"/>
+        <path transform="rotate(120)" d="M0-18.5V18.5"/><path transform="rotate(135)" d="M0-18.5V18.5"/><path transform="rotate(150)" d="M0-18.5V18.5"/><path transform="rotate(165)" d="M0-18.5V18.5"/>
+      </g>
+      <circle r="3.5" fill="#000080" stroke="none"/>
+    </g>
+  </symbol>
+  <symbol id="flag-de" viewBox="0 0 5 3">
+    <path fill="#000000" d="M0 0h5v1H0z"/>
+    <path fill="#dd0000" d="M0 1h5v1H0z"/>
+    <path fill="#ffce00" d="M0 2h5v1H0z"/>
+  </symbol>
+</svg>
 
-<header class="topbar">
-  <div class="wrap">
+
+<header class="hero" id="top">
+  <div class="nav">
     <a class="brand" href="#top">Rohit Mangla</a>
     <nav aria-label="Sections">
       <a href="#strengths">Strengths</a>
@@ -215,60 +234,58 @@
       <a href="#contact">Contact</a>
     </nav>
   </div>
+
+  <div class="hero-top">
+    <h1>I lead product delivery where hardware, software and regulation meet.</h1>
+    <p>I am a Delivery Director at VantEdge in Calgary. For more than ten years I have taken products from concept to launch in energy, fintech, electric mobility, medical devices and consumer electronics.</p>
+  </div>
+
+  <div class="hero-bottom">
+    <div class="specs">
+      <div>
+        <strong>60</strong>
+        <span>people in the team I led at Flex, from concept to mass production</span>
+      </div>
+      <div>
+        <strong>5</strong>
+        <span>global automotive OEM accounts at Exro</span>
+      </div>
+      <div>
+        <strong>Class 2</strong>
+        <span>medical device launch that I led at Kent Imaging</span>
+      </div>
+      <div>
+        <strong>3</strong>
+        <span>digital product lines in the PMO I lead at VantEdge</span>
+      </div>
+    </div>
+    <div class="buttons">
+      <a class="btn primary" href="mailto:rohitmangla@outlook.com">Email me</a>
+      <a class="btn light" href="https://www.linkedin.com/in/rohitmangla" target="_blank" rel="noopener">View my LinkedIn profile</a>
+    </div>
+  </div>
 </header>
 
-<main id="top">
+<main>
 
-  <div class="hero">
-    <div class="wrap">
-      <h1>I lead product delivery where hardware, software and regulation meet.</h1>
-      <p>I am a Delivery Director at VantEdge in Calgary. For more than ten years I have taken products from concept to launch in energy, fintech, electric mobility, medical devices and consumer electronics.</p>
-      <div class="actions">
-        <a class="button" href="mailto:rohitmangla@outlook.com">Email me</a>
-        <a class="on-dark" href="https://www.linkedin.com/in/rohitmangla" target="_blank" rel="noopener">View my LinkedIn profile</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrap">
-    <div class="facts">
-      <div class="fact">
-        <strong>60</strong>
-        <span>people in the cross-functional team I led at Flex, from concept to mass production</span>
-      </div>
-      <div class="fact">
-        <strong>5</strong>
-        <span>global automotive OEM accounts at Exro: Stellantis, Volvo, Traton, Mercedes and VW</span>
-      </div>
-      <div class="fact">
-        <strong>Class 2</strong>
-        <span>medical device launch that I led at Kent Imaging, a VC-backed startup</span>
-      </div>
-      <div class="fact">
-        <strong>3</strong>
-        <span>digital product lines in the PMO I lead today at VantEdge</span>
-      </div>
-    </div>
-  </div>
-
-  <section id="strengths" class="tinted">
+  <section id="strengths">
     <div class="wrap">
       <div class="section-head">
         <h2>Where I do my best work</h2>
         <p>My programs have one thing in common. The product must work, and it must also satisfy a regulator, an auditor or an OEM customer.</p>
       </div>
-      <div class="strengths">
-        <div>
+      <div class="cards three">
+        <div class="card">
           <h3>Hardware, from concept to mass production</h3>
           <p>I run new product introduction programs. I align design, supply chain and manufacturing teams, and I keep them aligned until the product ships.</p>
           <p class="proof">Smart AR audio glasses for Bose at Flex. The Coil Driver™ traction inverter at Exro. A Class 2 medical device at Kent Imaging.</p>
         </div>
-        <div>
+        <div class="card">
           <h3>AI products for regulated work</h3>
           <p>I lead AI delivery for a regulatory compliance platform in the energy industry. I also build AI agents myself, so I know what the technology can and cannot do.</p>
           <p class="proof">AI Delivery Lead for Conformii at VantEdge. Hands-on agentic AI development.</p>
         </div>
-        <div>
+        <div class="card">
           <h3>Delivery organisations that scale</h3>
           <p>I set up the operating model that lets engineering teams deliver on time: the PMO, the planning rhythm and the executive reporting.</p>
           <p class="proof">Delivery transformation at Neo Financial. Chief of Staff to the CTO at Exro. PMO lead at VantEdge.</p>
@@ -277,13 +294,10 @@
     </div>
   </section>
 
-  <div class="band">
+  <div class="statement">
     <div class="wrap">
-      <div><div class="rule"></div></div>
-      <div>
-        <blockquote>The next decade of product work is about how people use AI tools.</blockquote>
-        <p>I care most about that question in places where an error has real consequences: energy infrastructure, medical devices, vehicles and finance. That is where I have spent my career, and that is where I want to build next.</p>
-      </div>
+      <blockquote>The next decade of product work is about how people use AI tools.</blockquote>
+      <p>I care most about that question in places where an error has real consequences: energy infrastructure, medical devices, vehicles and finance. That is where I have spent my career, and that is where I want to build next.</p>
     </div>
   </div>
 
@@ -294,11 +308,11 @@
         <p>Five companies since 2019. The industry changed each time. The work stayed the same: complex products, strict rules and firm launch dates.</p>
       </div>
 
-      <ol class="ledger">
+      <ol class="roles">
         <li>
           <div>
             <div class="when">2026 to present</div>
-            <div class="company">VantEdge</div>
+            <div class="company"><span>VantEdge</span><svg class="flag ca" role="img" aria-label="Canada"><use href="#flag-ca"/></svg></div>
             <div class="role">Delivery Director</div>
             <div class="where">Calgary, Canada</div>
           </div>
@@ -311,7 +325,7 @@
         <li>
           <div>
             <div class="when">2025</div>
-            <div class="company">Neo Financial</div>
+            <div class="company"><span>Neo Financial</span><svg class="flag ca" role="img" aria-label="Canada"><use href="#flag-ca"/></svg></div>
             <div class="role">Head of Product Delivery</div>
             <div class="where">Calgary, Canada</div>
           </div>
@@ -323,7 +337,7 @@
         <li>
           <div>
             <div class="when">2023 to 2025</div>
-            <div class="company">Exro Technologies</div>
+            <div class="company"><span>Exro Technologies</span><svg class="flag ca" role="img" aria-label="Canada"><use href="#flag-ca"/></svg></div>
             <div class="role">Senior Program Manager (PMO)<br>NPI Program Manager</div>
             <div class="where">Calgary, Canada</div>
           </div>
@@ -337,7 +351,7 @@
         <li>
           <div>
             <div class="when">2021 to 2023</div>
-            <div class="company">Kent Imaging</div>
+            <div class="company"><span>Kent Imaging</span><svg class="flag ca" role="img" aria-label="Canada"><use href="#flag-ca"/></svg></div>
             <div class="role">Operations Manager<br>Technical Product Management</div>
             <div class="where">Calgary, Canada</div>
           </div>
@@ -350,7 +364,7 @@
         <li>
           <div>
             <div class="when">2019 to 2021</div>
-            <div class="company">Flex</div>
+            <div class="company"><span>Flex</span><svg class="flag cn" role="img" aria-label="China"><use href="#flag-cn"/></svg></div>
             <div class="role">Program Manager<br>Technical Product Management</div>
             <div class="where">Guangdong, China</div>
           </div>
@@ -365,32 +379,32 @@
     </div>
   </section>
 
-  <section id="earlier" class="tinted">
+  <section id="earlier" class="grey">
     <div class="wrap">
       <div class="section-head">
         <h2>Before 2019</h2>
         <p>I started on the commercial side. I sold medical products across borders and I co-founded a social enterprise. That is why I plan programs around customers and markets, not only around schedules.</p>
       </div>
-      <div class="earlier">
-        <div>
-          <h3>UEG Medical Group</h3>
+      <div class="cards two">
+        <div class="card">
+          <h3><span>UEG Medical Group</span><svg class="flag cn" role="img" aria-label="China"><use href="#flag-cn"/></svg></h3>
           <div class="meta">Overseas Sales Manager, Shanghai, 2017 to 2018</div>
-          <p class="body">I led go-to-market work in India, Nepal, Bangladesh, Sri Lanka and Bhutan for OT consumables, dental imaging (CBCT) and wound management products. I worked with regulatory affairs partners to get product approvals.</p>
+          <p>I led go-to-market work in India, Nepal, Bangladesh, Sri Lanka and Bhutan for OT consumables, dental imaging (CBCT) and wound management products. I worked with regulatory affairs partners to get product approvals.</p>
         </div>
-        <div>
-          <h3>Liferiver Bio-Tech</h3>
+        <div class="card">
+          <h3><span>Liferiver Bio-Tech</span><svg class="flag cn" role="img" aria-label="China"><use href="#flag-cn"/></svg></h3>
           <div class="meta">International Sales Manager, Shanghai, 2016 to 2017</div>
-          <p class="body">I ran international growth strategy and operations for a molecular diagnostics firm. The products were RT-PCR kits and DNA/RNA extraction systems.</p>
+          <p>I ran international growth strategy and operations for a molecular diagnostics firm. The products were RT-PCR kits and DNA/RNA extraction systems.</p>
         </div>
-        <div>
-          <h3>Mandala Group</h3>
+        <div class="card">
+          <h3><span>Mandala Group</span><svg class="flag in" role="img" aria-label="India"><use href="#flag-in"/></svg><svg class="flag cn" role="img" aria-label="China"><use href="#flag-cn"/></svg></h3>
           <div class="meta">Co-Founder, Mumbai and Shanghai, 2015 to 2016</div>
-          <p class="body">A social enterprise that set out to build an impact app store for the bottom billion. We designed, developed and distributed apps with social entrepreneurs for communities that live in poverty.</p>
+          <p>A social enterprise that set out to build an impact app store for the bottom billion. We designed, developed and distributed apps with social entrepreneurs for communities that live in poverty.</p>
         </div>
-        <div>
-          <h3>teleStory</h3>
+        <div class="card">
+          <h3><span>teleStory</span><svg class="flag cn" role="img" aria-label="China"><use href="#flag-cn"/></svg><svg class="flag in" role="img" aria-label="India"><use href="#flag-in"/></svg></h3>
           <div class="meta">Business Development Manager, India, 2015</div>
-          <p class="body">An early childhood education app that works on a basic mobile phone without internet. teleStory won the Hult Prize 2015 Shanghai Regionals and was one of six world finalists.</p>
+          <p>An early childhood education app that works on a basic mobile phone without internet. teleStory won the Hult Prize 2015 Shanghai Regionals and was one of six world finalists.</p>
         </div>
       </div>
       <p class="interns">I began at BYJU'S in Bengaluru, where I converted a business development internship into a full-time offer. Before that, I did engineering and program internships at Flextronics, Godrej, Philips, Mahindra &amp; Mahindra and Jindal Stainless.</p>
@@ -408,19 +422,19 @@
           <h3>Education</h3>
           <ul>
             <li>
-              <span class="title">Shanghai Jiao Tong University, Antai College of Economics &amp; Management</span>
+              <span class="title">Shanghai Jiao Tong University, Antai College of Economics &amp; Management<svg class="flag cn" role="img" aria-label="China"><use href="#flag-cn"/></svg></span>
               <span class="sub">Master in Management, International Business</span>
             </li>
             <li>
-              <span class="title">Mannheim Business School</span>
+              <span class="title">Mannheim Business School<svg class="flag de" role="img" aria-label="Germany"><use href="#flag-de"/></svg></span>
               <span class="sub">MBA exchange, Business Administration and Management</span>
             </li>
             <li>
-              <span class="title">Manipal Institute of Technology</span>
+              <span class="title">Manipal Institute of Technology<svg class="flag in" role="img" aria-label="India"><use href="#flag-in"/></svg></span>
               <span class="sub">B.Tech, Mechatronics, Robotics and Automation Engineering</span>
             </li>
             <li>
-              <span class="title">Indo Swiss Training Centre (ISTC)</span>
+              <span class="title">Indo Swiss Training Centre (ISTC)<svg class="flag in" role="img" aria-label="India"><use href="#flag-in"/></svg></span>
               <span class="sub">Associate's degree, Instrumentation Technology</span>
             </li>
           </ul>
@@ -459,17 +473,18 @@
   </section>
 
   <div class="contact" id="contact">
-    <div class="wrap top">
+    <div class="wrap">
       <h2>Let us talk</h2>
       <p>I am happy to talk about product delivery, AI in regulated industries, or a program that must not fail.</p>
-      <div class="actions">
-        <a class="button" href="mailto:rohitmangla@outlook.com">Email me</a>
-        <a class="on-dark" href="https://www.linkedin.com/in/rohitmangla" target="_blank" rel="noopener">View my LinkedIn profile</a>
+      <div class="buttons">
+        <a class="btn primary" href="mailto:rohitmangla@outlook.com">Email me</a>
+        <a class="btn light" href="https://www.linkedin.com/in/rohitmangla" target="_blank" rel="noopener">View my LinkedIn profile</a>
       </div>
     </div>
-    <div class="wrap foot">
-      <span>© 2026 Rohit Mangla. Calgary, Canada.</span>
-      <span><a href="mailto:rohitmangla@outlook.com">rohitmangla@outlook.com</a></span>
+    <div class="foot">
+      <span>© 2026 Rohit Mangla</span>
+      <span>Calgary, Canada</span>
+      <a href="mailto:rohitmangla@outlook.com">rohitmangla@outlook.com</a>
     </div>
   </div>
 
